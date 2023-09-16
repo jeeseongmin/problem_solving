@@ -1,4 +1,4 @@
-// 백준 > 숨박꼭질
+// BOJ 1697 : 숨박꼭질
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 const input = require("fs").readFileSync(path).toString().trim();
 [N, K] = input.split(" ").map((item) => item * 1);

@@ -1,4 +1,4 @@
-// 백준 > 유기농 배추
+// BOJ 1012 : 유기농 배추
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [T, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 count = Array.from({ length: T }, () => 0);

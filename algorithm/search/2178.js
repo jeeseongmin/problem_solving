@@ -1,4 +1,4 @@
-// 백준 > 미로 탐색
+// BOJ 2178 : 미로 탐색
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 [N, M] = n.split(" ").map((item) => item * 1);

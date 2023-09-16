@@ -1,4 +1,4 @@
-// 백준 > 단지번호붙이기
+// BOJ 2667 : 단지번호붙이기
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 arr = arr.map((item) => {

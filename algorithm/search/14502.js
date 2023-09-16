@@ -1,3 +1,4 @@
+// BOJ 14502
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...board] = require("fs").readFileSync(path).toString().trim().split("\n");
 

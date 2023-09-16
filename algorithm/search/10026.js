@@ -1,4 +1,4 @@
-// 백준 > 적록색약
+// BOJ 10026 : 적록색약
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 n = Number(n);

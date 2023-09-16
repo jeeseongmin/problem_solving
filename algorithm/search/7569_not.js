@@ -1,3 +1,5 @@
+// BOJ 7569
+
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 // 1.하나의 값을 입력받을 때
 // const input = require('fs').readFileSync(path).toString().trim();

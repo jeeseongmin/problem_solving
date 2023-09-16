@@ -1,4 +1,4 @@
-// 백준 > 바이러스
+// BOJ 2606 : 바이러스
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [computers, lines, ...arr] = require("fs")
   .readFileSync(path)

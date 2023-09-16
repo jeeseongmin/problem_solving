@@ -1,4 +1,4 @@
-// DFS와 BFS
+// BOJ 1260 : DFS와 BFS
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 [N, M, V] = n.split(" ").map((item) => item * 1);

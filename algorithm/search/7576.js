@@ -1,4 +1,4 @@
-// 백준 > 토마토
+// BOJ 7576 : 토마토
 const path = process.platform === "linux" ? "/dev/stdin" : "../sample.txt";
 [n, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 
