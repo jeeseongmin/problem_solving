@@ -9,6 +9,7 @@ const path = process.platform === "linux" ? "/dev/stdin" : "../../sample.txt";
 [a, ...arr] = require("fs").readFileSync(path).toString().trim().split("\n");
 const [N, M] = a.split(" ").map(Number);
 arr = arr.map((item, index) => item.split("").map(Number));
+let Min = N * M;
 
 /**
  * 1. board 값이 0이고 visited가 0일 때 , dfs 진행
@@ -21,9 +22,18 @@ function solution(n, m, board) {
   );
 
   console.log(visited);
-  dfs(0, 0, board, visited, 1);
+  dfs(0, 0, board, visited, 1, 0);
 }
 
-function dfs(x, y, _board, _visited, op) {}
+function dfs(x, y, _board, _visited, op, len) {
+  _visited[x][y] = 1;
+  len++;
+  if (x === N - 1 && y === M - 1) Min = len < Min ? len : Min;
+
+  for (let i = 0; i < 4; i++) {}
+
+  let dx = [0, 0, 1, -1];
+  let dy = [1, -1, 0, 0];
+}
 
 console.log(solution(N, M, arr));
