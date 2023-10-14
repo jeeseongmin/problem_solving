@@ -21,14 +21,21 @@ function solution(n, m, board) {
     Array.from({ length: m }, () => 0)
   );
 
+  // x, y, op(기회), len(길이)
   queue.push([0, 0, 1, 1]);
 
   while (queue.length > 0) {
     const [x, y, op, len] = queue.shift();
+    visited[x][y] = 1;
     console.log(x, y);
     for (let i = 0; i < 4; i++) {
       let nx = x + dx[i];
       let ny = y + dy[i];
+
+      // visited가 체크되지 않아야 함.
+      if (0 <= nx && nx < n && 0 <= ny && ny < m && visited[nx][ny] !== 1) {
+        queue.push([nx, ny, 1, len + 1]);
+      }
     }
   }
 }
