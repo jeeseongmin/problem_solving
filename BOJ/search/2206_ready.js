@@ -18,15 +18,21 @@ const dy = [1, -1, 0, 0];
  */
 function solution(board) {
   let queue = [];
-  let visited = Array.from({ length: N }, () =>
+  let _visited = Array.from({ length: N }, () =>
     Array.from({ length: M }, () => 0)
   );
 
   // x, y, op(기회), len(길이)
-  queue.push([0, 0, 1, 1]);
+  queue.push({
+    x: 0,
+    y: 0,
+    op: 1,
+    len: 1,
+    visited: _visited,
+  });
 
   while (queue.length > 0) {
-    const [x, y, op, len] = queue.shift();
+    const { x, y, op, len, visited } = queue.shift();
     console.log(x, y, op, len);
     if (x === N - 1 && y === M - 1) return len;
     visited[x][y] = 1;
@@ -37,8 +43,21 @@ function solution(board) {
       // visited가 체크되지 않아야 함.
       if (0 <= nx && nx < N && 0 <= ny && ny < M && visited[nx][ny] !== 1) {
         if (board[nx][ny] === 1 && op === 1)
-          queue.push([nx, ny, op - 1, len + 1]);
-        else if (board[nx][ny] === 0) queue.push([nx, ny, op, len + 1]);
+          queue.push({
+            x: nx,
+            y: ny,
+            op: op - 1,
+            len: len + 1,
+            visited: visited,
+          });
+        else if (board[nx][ny] === 0)
+          queue.push({
+            x: nx,
+            y: ny,
+            op: op,
+            len: len + 1,
+            visited: visited,
+          });
       }
     }
   }
